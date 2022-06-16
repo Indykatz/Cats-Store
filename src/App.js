@@ -1,5 +1,6 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
+import { TheApp } from "./css/App.styled";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Navbar from "./Navbar";
@@ -13,7 +14,7 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="App">
+    <TheApp>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -26,8 +27,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
-      \{" "}
-    </div>
+    </TheApp>
   );
 }
 
