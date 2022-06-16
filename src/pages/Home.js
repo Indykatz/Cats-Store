@@ -1,28 +1,25 @@
-import React, {useState} from 'react'
-import Navbar from '../Navbar'
-import Sidebar from '../Sidebar'
-import Footer from '../Footer'
+import React, { useState } from "react";
+import Navbar from "../Navbar";
+import Sidebar from "../Sidebar";
+import Footer from "../Footer";
 
 const Home = () => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
   const toggle = () => {
-    setIsOpen(!isOpen)
-  }
-
+    setIsOpen(!isOpen);
+  };
 
   return (
     <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <Navbar toggle={toggle} />
 
-    <Sidebar isOpen={isOpen} toggle={toggle} />
-    <Navbar toggle={toggle}/>
+      <h1>Home</h1>
+      <p>testing 123 testing</p>
 
-    <h1>Home</h1>
-
-    <Footer />
-    
+      <Footer />
     </>
-    
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
