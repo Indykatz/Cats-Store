@@ -1,77 +1,65 @@
-import React from 'react'
-import {GiCat, GiBasket} from 'react-icons/gi'
+import React from "react";
+import { GiCat } from "react-icons/gi";
+// GiBasket
 import {
-    Nav, 
-    NavbarContainer, 
-    NavLogo, 
-    MobileIcon, 
-    NavMenu, 
-    NavItem,
-    NavLink,
-    NavBtn,
-    NavBtnLink
-} from './NavbarElements'
-import {Routes, Route} from 'react-router-dom'
-import About from '../pages/About';
-import Home from '../pages/Home';
-import Breeds from '../pages/Breeds'
-import Contact from '../pages/Contact'
-import Basket from '../pages/Basket'
-import Bengals from '../pages/Bengals'
+  Nav,
+  NavbarContainer,
+  NavLogo,
+  MobileIcon,
+  NavMenu,
+  NavItem,
+  NavLink,
+  //   NavBtn,
+  //   NavBtnLink,
+} from "./NavbarElements";
 
-
-
-
-const Navbar = ({toggle}) => {
+const Navbar = ({ toggle }) => {
   return (
-    
-<>
-          <Nav>
+    <>
+      <Nav>
+        <NavbarContainer>
+          <NavLogo to="/">Logo</NavLogo>
 
-              <NavbarContainer>
-                  <NavLogo to='/'>
-                      Logo
-                  </NavLogo>
-                 
-                  <MobileIcon onClick={toggle}>
-                      <GiCat />
-                  </MobileIcon>
+          <MobileIcon onClick={toggle}>
+            <GiCat />
+          </MobileIcon>
 
-                  <NavMenu>
-                      <NavItem>
-                          <NavLink to='/About'>About</NavLink>
-                      </NavItem>
-                      <NavItem>
-                          <NavLink to='/Breeds'>Breeds</NavLink>
-                      </NavItem>
-                      <NavItem>
-                      <NavLink to='/Bengals'>Bengals</NavLink>
-                      </NavItem>
-                      <NavItem>
-                      <NavLink to='/Contact'>Contact</NavLink>
-                      </NavItem>
-                 </NavMenu>
+          <NavMenu>
+            <NavItem>
+              <NavLink to="/">Home</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/about">About</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/breeds">Breeds</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/bengals">Bengals</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/contact">Contact</NavLink>
+            </NavItem>
+          </NavMenu>
 
-              <NavBtn>
-                    <NavBtnLink >
-                  <GiBasket to='/Basket' />
-                    </NavBtnLink>
-              </NavBtn>
-          </NavbarContainer>
+          {/* <NavBtn>
+            <NavBtnLink>
+              <GiBasket to="/Basket" />
+            </NavBtnLink>
+          </NavBtn> */}
+        </NavbarContainer>
+      </Nav>
 
-        </Nav>      
+      {/* <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/About" element={<About />} />
+        <Route path="/Breeds" element={<Breeds />} />
+        <Route path="/Bengals" element={<Bengals />} />
+        <Route path="/Contact" element={<Contact />} />
+        <Route path="/Basket" element={<Basket />} />
+      </Routes> */}
+    </>
+  );
+};
 
-         <Routes>
-              <Route path ='/' element={<Home />} />
-              <Route path='/About' element={<About />} />
-              <Route path='/Breeds' element={<Breeds />} />
-              <Route path='/Bengals' element={<Bengals />} />
-              <Route path='/Contact' element={<Contact />} />
-              <Route path='/Basket' element={<Basket />} />
-          </Routes>
-</>  
-    
-  )
-}
-
-export default Navbar
+export default Navbar;
